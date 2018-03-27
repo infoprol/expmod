@@ -65,3 +65,12 @@ towermod a m = if gcd a m == 1 then expmod a (towermod a $ φ m) m else ((towerm
 invmod :: Natural -> Natural -> Natural
 a `invmod` m = (a `expmod` ((φ m)-1)) m
 
+
+-- here was my attempt to hack around what i thought was a lack of unicode 16 years ago.
+-- a better hack was realizing that everything is congruent to 3 mod 14, and 
+-- i modified NULL's code to reflect that.
+ 
+ {-
+primecount :: Natural -> Int
+primecount = (\x -> x :: Int) . φ 
+ --}
