@@ -42,6 +42,8 @@ execOpcode Drop e = if (head' $ q0 e) == '\0' then return e else let p = smalles
 execOpcode Swap e = return $ Env {x = y e, y = x e, q0 = q0 e, q1 = q1 e, q2 = q2 e}
 execOpcode Halt e = return e
 
+
+-- //TODO: account for values of ((primecount p) -1) !== 14 (approx 10 such exist).
 primeOp :: Integer -> Opcode
 primeOp p = toEnum 3  -- $ (\x -> 3)  --((primecount p)-1) `mod` 14
 
