@@ -17,7 +17,7 @@ import Data.Bits
 -- (for n = 111010010, [ 0, 1, 0, 0, 1, 0, 1, 1, 1 n])
 binDigs :: Word -> [Word]
 binDigs n = loop n [] where
-    loop 0 acc = 0 : acc
+    loop 0 acc = acc
     loop n acc = (n .&. 1) : loop (n `shiftR` 1) acc
 
 --loop m(n `shiftR` 1) (n .&. 1)
